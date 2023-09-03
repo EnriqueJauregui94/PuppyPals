@@ -27,16 +27,16 @@ function App() {
             <div className="FeaturedPuppy">
               <h2 className="FeaturedPuppy" style={{ backgroundImage: 'none' }}>🐾Featured Puppy🐾</h2>
               <div className="PuppyInfoBox">
-                <p>Name: {featuredPup.name}</p>
-                <p>ID: {featuredPup.id}</p>
-                <p>Email: {featuredPup.email}</p>
-                <p>isCute: {featuredPup.isCute ? 'Yes' : 'No'}</p>
-                <p>Age: {featuredPup.age}</p>
-                <p>Owner ID: {featuredPup.ownerId}</p>
-                <p>Tricks:</p>
+                <p><span className="bold-text">Name:</span> <strong>{featuredPup.name}</strong></p>
+                <p><span className="bold-text">ID:</span> <strong>{featuredPup.id}</strong></p>
+                <p><span className="bold-text">Email:</span> <strong>{featuredPup.email}</strong></p>
+                <p><span className="bold-text">isCute:</span> <strong>{featuredPup.isCute ? 'Yes' : 'No'}</strong></p>
+                <p><span className="bold-text">Age:</span> <strong>{featuredPup.age}</strong></p>
+                <p><span className="bold-text">Owner ID:</span> <strong>{featuredPup.ownerId}</strong></p>
+                <p><span className="bold-text">Tricks:</span></p>
                 <ul className="TricksList">
                   {featuredPup.tricks.map((trick) => (
-                    <li key={trick.id}>{trick.title}</li>
+                    <li key={trick.id}><strong>{trick.title}</strong></li>
                   ))}
                 </ul>
               </div>

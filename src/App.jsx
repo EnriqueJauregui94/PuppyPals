@@ -1,24 +1,51 @@
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react';
+import './App.css';
+import './index.css';
+import { puppyList } from './data.js';
 
 function App() {
+  const [puppies, setPuppies] = useState(puppyList);
+  const [featPupId, setFeatPupId] = useState(null);
+
+  const featuredPup = puppies.find((pup) => pup.id === featPupId);
+
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="App">
+      <div className="AppContainer">
+        <h1>🐾Puppy Pals🐾</h1>
+        <div className="PuppyContainer">
+          {puppies.map((puppy) => (
+            <p
+              className="PuppyName"
+              onClick={() => { setFeatPupId(puppy.id); }}
+              key={puppy.id}
+            >
+              {puppy.name}
+            </p>
+          ))}
+          {featuredPup && (
+            <div className="FeaturedPuppy">
+              <h2 className="FeaturedPuppy" style={{ backgroundImage: 'none' }}>🐾Featured Puppy🐾</h2>
+              <div className="PuppyInfoBox">
+                <p>Name: {featuredPup.name}</p>
+                <p>ID: {featuredPup.id}</p>
+                <p>Email: {featuredPup.email}</p>
+                <p>isCute: {featuredPup.isCute ? 'Yes' : 'No'}</p>
+                <p>Age: {featuredPup.age}</p>
+                <p>Owner ID: {featuredPup.ownerId}</p>
+                <p>Tricks:</p>
+                <ul className="TricksList">
+                  {featuredPup.tricks.map((trick) => (
+                    <li key={trick.id}>{trick.title}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          )}
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;

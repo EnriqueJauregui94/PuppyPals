@@ -11,9 +11,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -22,6 +24,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -39,4 +42,82 @@
 
 .read-the-docs {
   color: #888;
+}
+
+h1 {
+  color: white;
+  border: 2px solid #ffffff;
+  background-color: #2a2222;
+  padding: 20px;
+  border-radius: 50px;
+  margin-top: -31px;
+}
+
+h2 {
+
+  color: white !important;
+  border: 2px solid #ff0000;
+  background-color: #060000 !important;
+  padding: 20px;
+  border-radius: 50px !important;
+  margin-top: -31px !important;
+}
+
+.AppContainer {
+  background-image: url(https://www.creativefabrica.com/wp-content/uploads/2021/01/29/dog-bone-background-Graphics-8175983-1-1-580x415.jpg);
+  border: 2px solid #fcfcfc;
+  background-color: #2a2222;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: -15px;
+}
+
+
+.PuppyContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.PuppyName {
+  flex: 1;
+  border: 2px solid #ffffff;
+  padding: 2px;
+  margin: 5px;
+  border-radius: 20px;
+  background-color: #2a2222;
+  white-space: nowrap;
+}
+
+.FeaturedPuppy {
+  background-image: url(https://www.creativefabrica.com/wp-content/uploads/2021/01/29/dog-bone-background-Graphics-8175983-1-1-580x415.jpg);
+  flex: 1;
+  border: 2px solid #ffffff;
+  padding: 15px;
+  margin: 30px;
+  border-radius: 5px;
+  background-color: #2a2222 !important;
+  white-space: nowrap;
+}
+
+.PuppyInfoBox {
+  flex: 1;
+  border: 2px solid #ffffff;
+  padding: 15px;
+  margin: 40px;
+  border-radius: 75px;
+  background-color: #2a2222;
+  white-space: nowrap;
+}
+
+.TricksList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+}
+
+.TricksList li {
+  margin: 5px 0;
 }
